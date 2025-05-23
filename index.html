@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carlos Carbonell (DP) </title>
+
+<!-- Meta Information -->
+<meta name="description" content="Carlos Carbonell is a cinematographer (DP) based in Valencia, working on films, music videos, and campaigns worldwide.">
+<meta name="keywords" content="carlos carbonell, cinematographer, director of photography, dp, dop, short films, music videos, film campaigns, valencia, filmmaker, spain, director, producer, camera operator, lighting technician">
+<meta name="author" content="Carlos Carbonell">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Carlos Carbonell (DP) - Cinematographer">
+<meta property="og:description" content="Carlos Carbonell is a cinematographer from  Valencia, working on films, music videos, and campaigns worldwide.">
+<meta property="og:image" content="/files/carlos-carbonell.jpg"> <!-- Replace with a representative image -->
+<meta property="og:url" content="https://www.crbnell.com"> <!-- Replace with your website's URL -->
+<meta property="og:type" content="website">
+  
+  <!-- Favicon -->
+ <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
+  
+  <!-- Styles -->
+  <link href="style.css" rel="stylesheet" type="text/css">
+  
+  <!-- Scripts -->
+     <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Carlos Carbonell",
+    "jobTitle": "Cinematographer",
+    "url": "https://www.crbnell.com",
+    "sameAs": [
+      "https://www.instagram.com/crbnell",
+      "https://www.linkedin.com/in/crbnell",
+      "https://www.vimeo.com/crbnell",
+      "https://www.imdb.com/es-es/name/nm14843194/?ref_=nv_sr_srsg_0_tt_1_nm_7_in_0_q_carlos%2520carbonell"
+      "https://www.itsnova.com/crbnell"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Valencia",
+      "addressCountry": "ES"
+    }
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R05DW072KH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-R05DW072KH');
+  </script>
+
+  <script>
+    if (document.querySelector('.video-player')) {
+      const script = document.createElement('script');
+      script.src = 'https://player.vimeo.com/api/player.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const gridItems = document.querySelectorAll('.grid-item');
+      gridItems.forEach(item => {
+        const thumbnail = item.querySelector('.thumbnail');
+        const videoPlayer = item.querySelector('.video-player');
+        const videoId = thumbnail.dataset.videoId;
+        const player = new Vimeo.Player(videoPlayer, {
+          id: videoId,
+          autoplay: false,
+          controls: true
+        });
+
+        thumbnail.addEventListener('click', () => player.play());
+      });
+    });
+  </script>
+  <script>
+    function updateVisibleOverlay() {
+      if (window.innerWidth > 600) return; // Only applies to screens smaller than 600px
+
+      const posts = document.querySelectorAll('.post');
+      const windowHeight = window.innerHeight;
+
+      posts.forEach(post => {
+        const rect = post.getBoundingClientRect();
+        const overlay = post.querySelector('.overlay');
+
+        // Verifica si el post está en el centro de la pantalla
+        if (rect.top >= windowHeight * 0.25 && rect.bottom <= windowHeight * 0.75) {
+          overlay.style.opacity = '1'; // Muestra el overlay
+          overlay.style.visibility = 'visible';
+        } else {
+          overlay.style.opacity = '0'; // Oculta el overlay
+          overlay.style.visibility = 'hidden';
+        }
+      });
+    }
+
+    function handleResize() {
+      if (window.innerWidth > 600) {
+        // Recalcula la vista solo si el ancho es mayor a 600px
+        initializeGrid();
+      }
+    }
+
+    // Escucha el evento de scroll y ejecuta la función
+    window.addEventListener('scroll', updateVisibleOverlay);
+
+    // Escucha el evento de resize solo si la pantalla es mayor a 600px
+    if (window.innerWidth > 600) {
+      window.addEventListener('resize', handleResize);
+    }
+
+    // Ejecuta la función al cargar la página
+    document.addEventListener('DOMContentLoaded', updateVisibleOverlay);
+  </script>
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <script>
+      window.addEventListener('load', () => {
+        const loadingScreen = document.getElementById('loading-screen');
+        loadingScreen.classList.add('fade-out');
+        setTimeout(() => loadingScreen.style.display = 'none', 1000);
+      });
+
+      if (window.location.hash === '#example') {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    </script>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="home" onclick="location.reload(false);">
+      <span><h1>CARLOS CARBONELL</h1></span>
+    </div>
+    <div class="hover-text">Cinematographer from VLC, available worldwide 🌍</div>
+    <div class="filter-menu">
+      <ul id="filter-subtitle" class="filter-list">
+        <li data-filter="all" class="filter-item active">All</li>
+        <li data-filter="Short Film" class="filter-item">Narrative</li>
+        <li data-filter="Music video" class="filter-item">Music video</li>
+        <li data-filter="Campaign" class="filter-item">Commercial</li>
+        <li data-filter="archive" class="filter-item">Archive</li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Projects Container -->
+  <div id="proyectos" class="container"></div>
+
+  <!-- Modal Container -->
+  <div id="modal-container">
+    <script type="module">
+      import projects from './project.js';
+
+      const container = document.querySelector('.container');
+      const filterItems = document.querySelectorAll('.filter-item');
+      let selectedFilter = 'all';
+
+      function scrollToTop(duration = 100) {
+        const start = window.scrollY;
+        const startTime = performance.now();
+
+        function animateScroll(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1); // Limita el progreso a 1
+          const ease = progress < 0.5
+            ? 2 * progress * progress
+            : -1 + (4 - 2 * progress) * progress; // Easing para suavidad
+          window.scrollTo(0, start * (1 - ease));
+
+          if (progress < 1) {
+            requestAnimationFrame(animateScroll);
+          }
+        }
+
+        requestAnimationFrame(animateScroll);
+      }
+
+      function lazyLoadImages() {
+        const lazyImages = document.querySelectorAll('.lazy-image');
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src; // Reemplaza data-src por src
+              img.classList.add('fade-in'); // Añade la clase para la animación
+              observer.unobserve(img); // Deja de observar la imagen
+            }
+          });
+        });
+
+        lazyImages.forEach(img => observer.observe(img));
+      }
+
+      function generateMasonryGrid(columns, posts) {
+        container.innerHTML = '';
+        const columnWrappers = Array.from({ length: columns }, () => []);
+
+        [...posts].sort((a, b) => b.id - a.id).forEach((post, i) => {
+          columnWrappers[i % columns].push(post);
+        });
+
+        columnWrappers.forEach((columnPosts, i) => {
+          const columnDiv = document.createElement('div');
+          columnDiv.classList.add('column');
+          columnPosts.forEach((post, index) => {
+            const postDiv = document.createElement('div');
+            postDiv.classList.add('post', 'project-fade-in');
+            postDiv.style.animationDelay = `${index * 0.1}s`;
+            postDiv.setAttribute('data-id', post.id);
+
+            const link = document.createElement('a');
+            link.href = `./project-template.html?id=${post.id}`;
+
+            const image = document.createElement('img');
+            image.dataset.src = post.image; // Lazy loading
+            image.alt = post.alt; // Set the alt attribute dynamically
+            image.classList.add('lazy-image'); // Add lazy-image class
+            link.appendChild(image);
+
+            const hoverDiv = document.createElement('div');
+            hoverDiv.classList.add('overlay');
+
+            const title = document.createElement('h3');
+            title.innerText = post.title;
+            hoverDiv.appendChild(title);
+
+            const director = document.createElement('p');
+            director.classList.add('director');
+            director.innerText = `Dir: ${post.director || 'Unknown'}`;
+            hoverDiv.appendChild(director);
+
+            const brandYear = document.createElement('p');
+            brandYear.classList.add('brand-year');
+            brandYear.innerText = post.category === 'Short Film'
+              ? `${post.brand || 'Unknown'} (${post.year || 'N/A'})`
+              : `${post.brand || 'Unknown'}`;
+            hoverDiv.appendChild(brandYear);
+
+            const gif = document.createElement('img');
+            gif.src = post.gif;
+            gif.alt = `${post.title} - Animated preview`; // Add alt for GIFs
+            gif.classList.add('gif');
+            hoverDiv.appendChild(gif);
+
+            if (post.overlayImages && post.overlayImages.length > 0) {
+              const overlayImagesDiv = document.createElement('div');
+              overlayImagesDiv.classList.add('overlay-images');
+              post.overlayImages.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = "Laurel";
+                overlayImagesDiv.appendChild(img);
+              });
+              hoverDiv.appendChild(overlayImagesDiv);
+            }
+
+            link.appendChild(hoverDiv);
+            postDiv.appendChild(link);
+            columnDiv.appendChild(postDiv);
+          });
+          container.appendChild(columnDiv);
+        });
+
+        // Llama a lazyLoadImages después de generar las imágenes
+        lazyLoadImages();
+      }
+
+      function generateArchiveView(posts) {
+        container.innerHTML = '';
+        const locationAbbreviations = {
+          "Costa blanca, Spain": "ALC",
+          "Mallorca, Balears": "PMI",
+          "Lisboa, Portugal": "LIS"
+        };
+
+        const table = document.createElement('table');
+        table.classList.add('archive-table');
+        const tbody = document.createElement('tbody');
+
+        posts.forEach((post, index) => {
+          const row = document.createElement('tr');
+          row.dataset.href = `./project-template.html?id=${post.id}`;
+          row.dataset.image = post.gif;
+
+          const abbreviatedLocation = locationAbbreviations[post.location] || 
+            (post.location.toLowerCase().includes("valencia") ? "VLC" : post.location);
+
+          row.innerHTML = `
+            <td>${post.brand}</td>
+            <td>${post.title || 'N/A'}</td>
+            <td>${abbreviatedLocation || 'N/A'}</td>
+            <td>${post.year}</td>
+            <td>${post.format || 'N/A'}</td>
+          `;
+
+          row.addEventListener('click', () => window.location.href = row.dataset.href);
+          row.addEventListener('mouseover', () => {
+            document.body.style.backgroundImage = `url(${row.dataset.image})`;
+            document.body.style.backgroundSize = '50%';
+            document.body.style.backgroundPosition = 'center center';
+            document.body.style.backgroundRepeat = 'no-repeat';
+          });
+          row.addEventListener('mouseout', () => document.body.style.backgroundImage = '');
+
+          tbody.appendChild(row);
+          setTimeout(() => row.classList.add('row-fade-in'), (index + 1) * 100);
+        });
+
+        table.appendChild(tbody);
+        container.appendChild(table);
+      }
+
+      function initializeGrid(filteredProjects = projects) {
+        const filtered = selectedFilter === 'all'
+          ? projects
+          : projects.filter(project => project.category === selectedFilter);
+
+        const columns = window.innerWidth < 600 ? 1 : window.innerWidth < 1000 ? 2 : 3;
+        generateMasonryGrid(columns, filtered);
+      }
+
+      filterItems.forEach(item => {
+        item.addEventListener('click', () => {
+          filterItems.forEach(i => i.classList.remove('active'));
+          item.classList.add('active');
+          selectedFilter = item.dataset.filter;
+
+          container.classList.add('fade-out');
+          setTimeout(() => {
+            if (selectedFilter === 'archive') {
+              generateArchiveView(projects);
+            } else {
+              initializeGrid();
+            }
+            container.classList.remove('fade-out');
+            container.classList.add('fade-in');
+            setTimeout(() => container.classList.remove('fade-in'), 500);
+          }, 500);
+        });
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 600) { // Solo recalcula si no es móvil
+          if (selectedFilter === 'archive') {
+            generateArchiveView(projects);
+          } else {
+            initializeGrid();
+          }
+        }
+      });
+
+      initializeGrid();
+    </script>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <a href="https://www.instagram.com/crbnell" target="_blank" rel="noopener noreferrer">@crbnell</a>
+    <a href="tel:+34693772533">+34 693 77 25 33</a>
+    <a href="mailto:carloscrbnell@gmail.com">carloscrbnell@gmail.com</a>
+  </div>
+</body>
+</html>
