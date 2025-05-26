@@ -1,43 +1,46 @@
+<!-- 
+    designed and coded by Carlos Carbonell
+    May 2025
+-->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carlos Carbonell | Cinematographer </title>
+  <title>Carlos Carbonell | Cinematographer </title>
 
-<!-- Meta Information -->
+  <!-- META INFORMATION -->
   <meta name="description" id="dynamic-description" content="">
   <meta name="keywords" id="dynamic-keywords" content="">
-<meta name="author" content="Carlos Carbonell">
+  <meta name="author" content="Carlos Carbonell">
 
-<!-- Open Graph Meta Tags -->
-<meta property="og:title" id="og-title" content="">
-<meta property="og:description" id="og-description" content="">
-<meta property="og:image" id="og-image" content="">
-<meta property="og:url" id="og-url" content="">
-<meta property="og:type" content="website">
+  <!-- OPEN GRAPH META TAGS -->
+  <meta property="og:title" id="og-title" content="">
+  <meta property="og:description" id="og-description" content="">
+  <meta property="og:image" id="og-image" content="">
+  <meta property="og:url" id="og-url" content="">
+  <meta property="og:type" content="website">
   
-  <!-- Favicon -->
- <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+  <!-- FAVICON -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
   
-  <!-- Styles -->
+  <!-- STYLES -->
   <link href="style.css" rel="stylesheet" type="text/css" media="all">
   
-  <!-- Google tag (gtag.js) -->
+  <!-- GOOGLE TAG -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R05DW072KH"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-R05DW072KH');
   </script>
 
-  <!-- Scripts -->
-     <script type="application/ld+json">
+  <!-- SCRIPTS -->
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -48,8 +51,8 @@
       "https://www.instagram.com/crbnell",
       "https://www.linkedin.com/in/crbnell",
       "https://www.vimeo.com/crbnell",
-      "https://www.imdb.com/es-es/name/nm14843194/?ref_=nv_sr_srsg_0_tt_1_nm_7_in_0_q_carlos%2520carbonell
-      https://www.itsnova.com/crbnell"
+      "https://www.imdb.com/es-es/name/nm14843194/?ref_=nv_sr_srsg_0_tt_1_nm_7_in_0_q_carlos%2520carbonell",
+      "https://www.itsnova.com/crbnell"
     ],
     "address": {
       "@type": "PostalAddress",
@@ -58,11 +61,10 @@
     }
   }
   </script>
-
   <script src="https://player.vimeo.com/api/player.js" async></script>
 </head>
 <body class="project-page">
-  <!-- Loading Screen -->
+  <!-- LOADING SCREEN -->
   <div id="loading-screen">
     <script>
       window.addEventListener('load', () => {
@@ -83,40 +85,35 @@
       <h1 id="project-title">{{title}}</h1>
       <p id="project-director" class="project-director"></p>
       <p id="project-details" class="project-details">{{year}} | {{format}} | {{location}}</p>
-      <a href="index.html" class="back-link"><< Back to Projects</a>
+      <a href="/" class="back-link"><< Back to Projects</a>
     </div>
   </main>
 
+  <!-- SCRIPTS -->
   <script src="project.js" defer></script>
   <script type="module">
     import projects from './project.js';
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const projectId = parseInt(urlParams.get('id'), 10);
-    const project = projects.find(p => p.id === projectId);
-
+    const match = window.location.pathname.match(/^\/([a-zA-Z0-9\-_]+)/);
+    const slug = match ? match[1] : null;
+    const project = slug ? projects.find(p => p.url.replace('.html', '') === slug) : null;
     if (project) {
       document.title = `Carlos Carbonell (DP) - ${project.title}`;
-
       const titleElement = document.getElementById('project-title');
-      titleElement.textContent = 
-        (project.category === 'Campaign' || project.category === 'Music video') 
-          ? `${project.brand.toUpperCase()} | ${project.title}` 
+      titleElement.textContent =
+        (project.category === 'Campaign' || project.category === 'Music video')
+          ? `${project.brand.toUpperCase()} | ${project.title}`
           : project.title;
-
       const directorText = `Dir: ${project.director || 'Unknown'}`;
       const productionText = project.productionCompany && project.productionCompany !== 'undefined'
         ? ` | Prod: ${project.productionCompany}`
         : '';
       document.getElementById('project-director').textContent = directorText + productionText;
-
-      document.getElementById('project-details').textContent = 
+      document.getElementById('project-details').textContent =
         `${project.year} | ${project.format} | ${project.location}`;
-
-      document.getElementById('vimeo-player').src = 
+      document.getElementById('vimeo-player').src =
         `https://player.vimeo.com/video/${project.vimeoId}`;
     } else {
-      console.error('Project not found');
+      document.body.innerHTML = '<h2>Proyecto no encontrado</h2>';
     }
   </script>
 </body>

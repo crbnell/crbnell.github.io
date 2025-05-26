@@ -1,33 +1,37 @@
+<!-- 
+    designed and coded by Carlos Carbonell
+    May 2025
+-->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carlos Carbonell (DP) </title>
+  <title>Carlos Carbonell (DP) </title>
 
-<!-- Meta Information -->
-<meta name="description" content="Carlos Carbonell is a cinematographer (DP) based in Valencia, working on films, music videos, and campaigns worldwide.">
-<meta name="keywords" content="carlos carbonell, cinematographer, director of photography, dp, dop, short films, music videos, film campaigns, valencia, filmmaker, spain, director, producer, camera operator, lighting technician">
-<meta name="author" content="Carlos Carbonell">
+  <!-- META INFORMATION -->
+  <meta name="description" content="Carlos Carbonell is a cinematographer (DP) based in Valencia, working on films, music videos, and campaigns worldwide.">
+  <meta name="keywords" content="carlos carbonell, cinematographer, director of photography, dp, dop, short films, music videos, film campaigns, valencia, filmmaker, spain, director, producer, camera operator, lighting technician">
+  <meta name="author" content="Carlos Carbonell">
 
-<!-- Open Graph Meta Tags -->
-<meta property="og:title" content="Carlos Carbonell (DP) - Cinematographer">
-<meta property="og:description" content="Carlos Carbonell is a cinematographer from  Valencia, working on films, music videos, and campaigns worldwide.">
-<meta property="og:image" content="/files/carlos-carbonell.jpg"> <!-- Replace with a representative image -->
-<meta property="og:url" content="https://www.crbnell.com"> <!-- Replace with your website's URL -->
-<meta property="og:type" content="website">
+  <!-- OPEN GRAPH META TAGS -->
+  <meta property="og:title" content="Carlos Carbonell (DP) - Cinematographer">
+  <meta property="og:description" content="Carlos Carbonell is a cinematographer from  Valencia, working on films, music videos, and campaigns worldwide.">
+  <meta property="og:image" content="/files/carlos-carbonell.jpg">
+  <meta property="og:url" content="https://www.crbnell.com">
+  <meta property="og:type" content="website">
   
-  <!-- Favicon -->
- <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="manifest" href="/favicon/site.webmanifest">
+  <!-- FAVICON -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
   
-  <!-- Styles -->
+  <!-- STYLES -->
   <link href="style.css" rel="stylesheet" type="text/css">
   
-  <!-- Scripts -->
-     <script type="application/ld+json">
+  <!-- SCRIPTS -->
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -38,7 +42,7 @@
       "https://www.instagram.com/crbnell",
       "https://www.linkedin.com/in/crbnell",
       "https://www.vimeo.com/crbnell",
-      "https://www.imdb.com/es-es/name/nm14843194/?ref_=nv_sr_srsg_0_tt_1_nm_7_in_0_q_carlos%2520carbonell"
+      "https://www.imdb.com/es-es/name/nm14843194/?ref_=nv_sr_srsg_0_tt_1_nm_7_in_0_q_carlos%2520carbonell",
       "https://www.itsnova.com/crbnell"
     ],
     "address": {
@@ -48,25 +52,15 @@
     }
   }
   </script>
-
-  <!-- Google tag (gtag.js) -->
+  <!-- GOOGLE TAG -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R05DW072KH"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-R05DW072KH');
   </script>
 
-  <script>
-    if (document.querySelector('.video-player')) {
-      const script = document.createElement('script');
-      script.src = 'https://player.vimeo.com/api/player.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    }
-  </script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const gridItems = document.querySelectorAll('.grid-item');
@@ -79,70 +73,118 @@
           autoplay: false,
           controls: true
         });
-
         thumbnail.addEventListener('click', () => player.play());
       });
     });
   </script>
   <script>
     function updateVisibleOverlay() {
-      if (window.innerWidth > 600) return; // Only applies to screens smaller than 600px
-
+      if (window.innerWidth > 600) return;
       const posts = document.querySelectorAll('.post');
       const windowHeight = window.innerHeight;
-
       posts.forEach(post => {
         const rect = post.getBoundingClientRect();
         const overlay = post.querySelector('.overlay');
-
-        // Verifica si el post está en el centro de la pantalla
         if (rect.top >= windowHeight * 0.25 && rect.bottom <= windowHeight * 0.75) {
-          overlay.style.opacity = '1'; // Muestra el overlay
+          overlay.style.opacity = '1';
           overlay.style.visibility = 'visible';
         } else {
-          overlay.style.opacity = '0'; // Oculta el overlay
+          overlay.style.opacity = '0';
           overlay.style.visibility = 'hidden';
         }
       });
     }
-
     function handleResize() {
       if (window.innerWidth > 600) {
-        // Recalcula la vista solo si el ancho es mayor a 600px
         initializeGrid();
       }
     }
-
-    // Escucha el evento de scroll y ejecuta la función
     window.addEventListener('scroll', updateVisibleOverlay);
-
-    // Escucha el evento de resize solo si la pantalla es mayor a 600px
     if (window.innerWidth > 600) {
       window.addEventListener('resize', handleResize);
     }
-
-    // Ejecuta la función al cargar la página
     document.addEventListener('DOMContentLoaded', updateVisibleOverlay);
   </script>
 </head>
 
 <body>
-  <!-- Loading Screen -->
+  <!-- LOADING SCREEN -->
   <div id="loading-screen">
     <script>
-      window.addEventListener('load', () => {
-        const loadingScreen = document.getElementById('loading-screen');
-        loadingScreen.classList.add('fade-out');
-        setTimeout(() => loadingScreen.style.display = 'none', 1000);
+      document.addEventListener('DOMContentLoaded', () => {
+        const isFirstLoad = !sessionStorage.getItem('visited');
+        if (isFirstLoad) sessionStorage.setItem('visited', 'true');
+
+        // Helper: check if all images/videos in viewport are loaded
+        function isMediaLoadedInViewport() {
+          const media = Array.from(document.querySelectorAll('.post img, .post video'))
+            .filter(el => {
+              const rect = el.getBoundingClientRect();
+              return rect.top < window.innerHeight && rect.bottom > 0;
+            });
+          return media.every(el => {
+            if (el.tagName === 'IMG') return el.complete;
+            if (el.tagName === 'VIDEO') return el.readyState >= 2;
+            return true;
+          });
+        }
+
+        function tryHideLoading() {
+          if (isMediaLoadedInViewport()) {
+            hideLoadingScreen();
+            observer.disconnect();
+          }
+        }
+
+        function hideLoadingScreen() {
+          const loadingScreen = document.getElementById('loading-screen');
+          loadingScreen.classList.add('fade-out');
+          setTimeout(() => loadingScreen.style.display = 'none', 1000);
+        }
+
+        // Observe DOM changes to check for new media
+        const observer = new MutationObserver(() => {
+          addMediaListeners();
+          tryHideLoading();
+        });
+        const container = document.querySelector('.container');
+        if (container) observer.observe(container, { childList: true, subtree: true });
+
+        // Listen for load events on images/videos in viewport
+        function addMediaListeners() {
+          const media = Array.from(document.querySelectorAll('.post img, .post video'))
+            .filter(el => {
+              const rect = el.getBoundingClientRect();
+              return rect.top < window.innerHeight && rect.bottom > 0;
+            });
+          media.forEach(el => {
+            if (el.tagName === 'IMG' && !el.complete) {
+              el.addEventListener('load', tryHideLoading, { once: true });
+            }
+            if (el.tagName === 'VIDEO' && el.readyState < 2) {
+              el.addEventListener('loadeddata', tryHideLoading, { once: true });
+            }
+          });
+        }
+
+        // Run on DOMContentLoaded and after DOM mutations
+        addMediaListeners();
+        tryHideLoading();
+
+        // Also check on scroll (in case lazy images/videos enter viewport)
+        window.addEventListener('scroll', () => {
+          addMediaListeners();
+          tryHideLoading();
+        });
+
+        if (window.location.hash === '#example') {
+          history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
       });
-
-      if (window.location.hash === '#example') {
-        history.replaceState(null, '', window.location.pathname + window.location.search);
-      }
     </script>
-  </div>
+  </div> 
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header>
     <div class="home" onclick="location.reload(false);">
       <span><h1>CARLOS CARBONELL</h1></span>
@@ -159,63 +201,52 @@
     </div>
   </header>
 
-  <!-- Projects Container -->
+  <!-- PROJECTS CONTAINER -->
   <div id="proyectos" class="container"></div>
 
-  <!-- Modal Container -->
+  <!-- MODAL CONTAINER -->
   <div id="modal-container">
     <script type="module">
       import projects from './project.js';
-
       const container = document.querySelector('.container');
       const filterItems = document.querySelectorAll('.filter-item');
       let selectedFilter = 'all';
-
       function scrollToTop(duration = 100) {
         const start = window.scrollY;
         const startTime = performance.now();
-
         function animateScroll(currentTime) {
           const elapsed = currentTime - startTime;
-          const progress = Math.min(elapsed / duration, 1); // Limita el progreso a 1
+          const progress = Math.min(elapsed / duration, 1);
           const ease = progress < 0.5
             ? 2 * progress * progress
-            : -1 + (4 - 2 * progress) * progress; // Easing para suavidad
+            : -1 + (4 - 2 * progress) * progress;
           window.scrollTo(0, start * (1 - ease));
-
           if (progress < 1) {
             requestAnimationFrame(animateScroll);
           }
         }
-
         requestAnimationFrame(animateScroll);
       }
-
       function lazyLoadImages() {
         const lazyImages = document.querySelectorAll('.lazy-image');
-
         const observer = new IntersectionObserver((entries, observer) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               const img = entry.target;
-              img.src = img.dataset.src; // Reemplaza data-src por src
-              img.classList.add('fade-in'); // Añade la clase para la animación
-              observer.unobserve(img); // Deja de observar la imagen
+              img.src = img.dataset.src;
+              img.classList.add('fade-in');
+              observer.unobserve(img);
             }
           });
         });
-
         lazyImages.forEach(img => observer.observe(img));
       }
-
       function generateMasonryGrid(columns, posts) {
         container.innerHTML = '';
         const columnWrappers = Array.from({ length: columns }, () => []);
-
         [...posts].sort((a, b) => b.id - a.id).forEach((post, i) => {
           columnWrappers[i % columns].push(post);
         });
-
         columnWrappers.forEach((columnPosts, i) => {
           const columnDiv = document.createElement('div');
           columnDiv.classList.add('column');
@@ -224,41 +255,39 @@
             postDiv.classList.add('post', 'project-fade-in');
             postDiv.style.animationDelay = `${index * 0.1}s`;
             postDiv.setAttribute('data-id', post.id);
-
             const link = document.createElement('a');
-            link.href = `./project-template.html?id=${post.id}`;
-
+            link.href = `/${post.url.replace('.html', '')}`;
             const image = document.createElement('img');
-            image.dataset.src = post.image; // Lazy loading
-            image.alt = post.alt; // Set the alt attribute dynamically
-            image.classList.add('lazy-image'); // Add lazy-image class
+            image.dataset.src = post.image;
+            image.alt = post.alt;
+            image.classList.add('lazy-image');
+            image.width = 600;
+            image.setAttribute('loading', 'lazy');
             link.appendChild(image);
-
             const hoverDiv = document.createElement('div');
             hoverDiv.classList.add('overlay');
-
             const title = document.createElement('h3');
             title.innerText = post.title;
             hoverDiv.appendChild(title);
-
             const director = document.createElement('p');
             director.classList.add('director');
             director.innerText = `Dir: ${post.director || 'Unknown'}`;
             hoverDiv.appendChild(director);
-
             const brandYear = document.createElement('p');
             brandYear.classList.add('brand-year');
             brandYear.innerText = post.category === 'Short Film'
               ? `${post.brand || 'Unknown'} (${post.year || 'N/A'})`
               : `${post.brand || 'Unknown'}`;
             hoverDiv.appendChild(brandYear);
-
-            const gif = document.createElement('img');
-            gif.src = post.gif;
-            gif.alt = `${post.title} - Animated preview`; // Add alt for GIFs
+            const gif = document.createElement('video');
+            gif.dataset.src = post.gif;
+            gif.autoplay = true;
+            gif.loop = true;
+            gif.muted = true;
+            gif.playsInline = true;
             gif.classList.add('gif');
+            gif.setAttribute('preload', 'none');
             hoverDiv.appendChild(gif);
-
             if (post.overlayImages && post.overlayImages.length > 0) {
               const overlayImagesDiv = document.createElement('div');
               overlayImagesDiv.classList.add('overlay-images');
@@ -270,18 +299,24 @@
               });
               hoverDiv.appendChild(overlayImagesDiv);
             }
-
             link.appendChild(hoverDiv);
             postDiv.appendChild(link);
             columnDiv.appendChild(postDiv);
           });
           container.appendChild(columnDiv);
         });
-
-        // Llama a lazyLoadImages después de generar las imágenes
         lazyLoadImages();
       }
-
+      function loadVimeoScriptIfNeeded() {
+        const gifs = document.querySelectorAll('.gif');
+        if (gifs.length > 0 && !window.vimeoScriptLoaded) {
+          const script = document.createElement('script');
+          script.src = 'https://player.vimeo.com/api/player.js';
+          script.defer = true;
+          document.head.appendChild(script);
+          window.vimeoScriptLoaded = true;
+        }
+      }
       function generateArchiveView(posts) {
         container.innerHTML = '';
         const locationAbbreviations = {
@@ -289,19 +324,15 @@
           "Mallorca, Balears": "PMI",
           "Lisboa, Portugal": "LIS"
         };
-
         const table = document.createElement('table');
         table.classList.add('archive-table');
         const tbody = document.createElement('tbody');
-
         posts.forEach((post, index) => {
           const row = document.createElement('tr');
-          row.dataset.href = `./project-template.html?id=${post.id}`;
+          row.dataset.href = `/${post.url.replace('.html', '')}`;
           row.dataset.image = post.gif;
-
           const abbreviatedLocation = locationAbbreviations[post.location] || 
             (post.location.toLowerCase().includes("valencia") ? "VLC" : post.location);
-
           row.innerHTML = `
             <td>${post.brand}</td>
             <td>${post.title || 'N/A'}</td>
@@ -309,45 +340,69 @@
             <td>${post.year}</td>
             <td>${post.format || 'N/A'}</td>
           `;
-
           row.addEventListener('click', () => window.location.href = row.dataset.href);
           row.addEventListener('mouseover', () => {
-            document.body.style.backgroundImage = `url(${row.dataset.image})`;
-            document.body.style.backgroundSize = '50%';
-            document.body.style.backgroundPosition = 'center center';
-            document.body.style.backgroundRepeat = 'no-repeat';
+            let bgVideo = document.getElementById('archive-bg-video');
+            if (!bgVideo) {
+              bgVideo = document.createElement('video');
+              bgVideo.id = 'archive-bg-video';
+              bgVideo.style.position = 'fixed';
+              bgVideo.style.top = '50%';
+              bgVideo.style.left = '50%';
+              bgVideo.style.transform = 'translate(-50%, -50%)';
+              bgVideo.style.width = '50%';
+              bgVideo.style.zIndex = '0';
+              bgVideo.style.pointerEvents = 'none';
+              bgVideo.style.opacity = '1';
+              bgVideo.style.transition = 'opacity 0.3s';
+              bgVideo.muted = true;
+              bgVideo.loop = true;
+              bgVideo.playsInline = true;
+              document.body.appendChild(bgVideo);
+            }
+            bgVideo.innerHTML = '';
+            const source = document.createElement('source');
+            source.src = post.gif;
+            source.type = 'video/webm';
+            bgVideo.appendChild(source);
+            bgVideo.load();
+            bgVideo.play();
+            bgVideo.style.opacity = '1';
           });
-          row.addEventListener('mouseout', () => document.body.style.backgroundImage = '');
-
+          row.addEventListener('mouseout', () => {
+            const bgVideo = document.getElementById('archive-bg-video');
+            if (bgVideo) {
+              bgVideo.pause();
+              bgVideo.style.opacity = '0';
+              bgVideo.innerHTML = '';
+            }
+          });
           tbody.appendChild(row);
           setTimeout(() => row.classList.add('row-fade-in'), (index + 1) * 100);
         });
-
         table.appendChild(tbody);
         container.appendChild(table);
+        lazyLoadGifs();
       }
-
       function initializeGrid(filteredProjects = projects) {
         const filtered = selectedFilter === 'all'
           ? projects
           : projects.filter(project => project.category === selectedFilter);
-
         const columns = window.innerWidth < 600 ? 1 : window.innerWidth < 1000 ? 2 : 3;
         generateMasonryGrid(columns, filtered);
       }
-
       filterItems.forEach(item => {
         item.addEventListener('click', () => {
           filterItems.forEach(i => i.classList.remove('active'));
           item.classList.add('active');
           selectedFilter = item.dataset.filter;
-
           container.classList.add('fade-out');
           setTimeout(() => {
             if (selectedFilter === 'archive') {
               generateArchiveView(projects);
             } else {
               initializeGrid();
+              lazyLoadGifs(); // <-- Asegura recarga de webm tras filtro
             }
             container.classList.remove('fade-out');
             container.classList.add('fade-in');
@@ -355,26 +410,61 @@
           }, 500);
         });
       });
-
       window.addEventListener('resize', () => {
-        if (window.innerWidth > 600) { // Solo recalcula si no es móvil
+        if (window.innerWidth > 600) {
           if (selectedFilter === 'archive') {
             generateArchiveView(projects);
           } else {
             initializeGrid();
+            lazyLoadGifs(); // <-- Asegura recarga de webm tras resize
           }
         }
       });
-
       initializeGrid();
+      const slugMatch = window.location.pathname.match(/^\/([a-zA-Z0-9\-_]+)/);
+      const slug = slugMatch ? slugMatch[1] : null;
+      const project = slug ? projects.find(p => p.url.replace('.html', '') === slug) : null;
+      if (project) {
+        document.querySelector('h1').textContent = project.title;
+        document.getElementById('brand').textContent = project.brand;
+        document.getElementById('year').textContent = project.year;
+        document.getElementById('location').textContent = project.location;
+      } else if (slug) {
+      }
+      function lazyLoadGifs() {
+        const gifs = document.querySelectorAll('.gif[data-src]');
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const gif = entry.target;
+              if (!gif.querySelector('source')) {
+                const source = document.createElement('source');
+                source.src = gif.dataset.src;
+                source.type = 'video/webm';
+                gif.appendChild(source);
+                gif.load();
+              }
+              gif.removeAttribute('data-src');
+              observer.unobserve(gif);
+            }
+          });
+        }, { rootMargin: '200px' });
+        gifs.forEach(gif => observer.observe(gif));
+      }
+      lazyLoadGifs();
     </script>
   </div>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <div class="footer">
     <a href="https://www.instagram.com/crbnell" target="_blank" rel="noopener noreferrer">@crbnell</a>
     <a href="tel:+34693772533">+34 693 77 25 33</a>
     <a href="mailto:carloscrbnell@gmail.com">carloscrbnell@gmail.com</a>
   </div>
+
+  <h1></h1>
+  <p id="brand"></p>
+  <p id="year"></p>
+  <p id="location"></p>
 </body>
 </html>

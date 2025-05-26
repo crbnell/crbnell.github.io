@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 /* BASE */
 html, body {
   margin: 0;
@@ -13,7 +14,24 @@ html, body {
   font-size: 15px;
   line-height: 1.4;
   background-color: black;
-  transition: background-image 0.3s ease-in-out, background-size 0.3s ease-in-out; /* Smooth transition */
+  transition: background-image 0.3s ease-in-out, background-size 0.3s ease-in-out;
+}
+
+/* SELECCIÓN */
+::selection {
+  background-color: #eeeeee;
+  color: #141414;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BARRA DE SCROLL */
+::-webkit-scrollbar {
+  display: none;
 }
 
 /* LOADING SCREEN */
@@ -29,34 +47,20 @@ html, body {
   justify-content: center;
   align-items: center;
   opacity: 1;
-  transition: opacity 1s ease-in-out; /* Change the duration if necessary */
+  transition: opacity 1s ease-in-out;
 }
-
 #loading-screen.fade-out {
   opacity: 0;
-  pointer-events: none; /* Prevents interaction while fading out */
+  pointer-events: none;
 }
-
 #loading-screen img {
   width: 100%;
   height: auto;
   max-width: 300px;
   filter: blur(1px);
 }
-/* PIJADAS BASE  */
-/* 1. Selección  */ ::selection {
-  background-color: #eeeeee;
-  color: #141414;
-}
-*, *::before, ::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-/* 2. Barra de scroll  */ ::-webkit-scrollbar {
-  display: none;
-}
-/* BARRA NAVEGACIÓN */
+
+/* NAVIGATION */
 nav a {
   text-decoration: none;
 }
@@ -73,67 +77,109 @@ nav a {
 .home {
   margin: 0 auto;
   position: fixed;
-  top: 20px; /* Posiciona el texto en la parte inferior */
-  left: 20px; /* Alinea el texto a la izquierda */  z-index: 45;
+  top: 20px;
+  left: 20px;
+  z-index: 120;
   font-size: 1.2rem;
   filter: blur(0.3px);
-  mix-blend-mode: difference; /* Aplica el efecto al contenedor */
+  mix-blend-mode: difference;
 }
-
 .home:hover ~ .hover-text {
-  opacity: 0.8; /* Muestra el texto al hacer hover */
-  transform: translateY(0); /* Anima la entrada */
-  transition-delay: 0s; /* Sin delay al entrar */
+  opacity: 0.8;
+  transform: translateY(0);
+  transition-delay: 0s;
 }
-
 .home:not(:hover) ~ .hover-text {
-  opacity: 0; /* Oculta el texto al salir */
-  transition-delay: 1s; /* Aplica un delay solo al salir */
+  opacity: 0;
+  transition-delay: 1s;
 }
-
 .home:hover {
-cursor: help;}
+  cursor: help;
+}
 .hover-text {
   margin: 0 auto;
   position: fixed;
   z-index: 45;
   font-size: 1.2rem;
-  filter: blur(0.3px);
-  bottom: 20px; /* Posiciona el texto en la parte inferior */
-  left: 20px; /* Alinea el texto a la izquierda */
-  transform: none; /* Elimina la transformación de centrado */
-  color: white; /* Asegura que el texto sea blanco */
-  opacity: 0; /* Oculta el texto por defecto */
-  transition: opacity 1s ease-in-out 0.3s, transform 1s ease-in-out; /* Delay solo para opacidad */
+  bottom: 20px;
+  left: 20px;
+  transform: none;
+  color: white;
+  opacity: 0;
+  transition: opacity 1s ease-in-out 0.3s, transform 1s ease-in-out;
 }
-
 .home h1 {
   display: inline-block;
-  color: white; /* Asegura que el texto sea blanco */
-  filter: grayscale(1); /* Aplica escala de grises al texto */
-  opacity: 0.9; /* Ajusta la opacidad si es necesario */
+  color: white;
+  filter: grayscale(1);
+  opacity: 0.9;
   font-size: 1.2rem;
-  font-weight: 400; /* Cambia la fuente a regular */
+  font-weight: 400;
 }
-
-/* Efecto de hover para pantallas mayores a 700px */
 @media (min-width: 700px) {
   .home:hover ~ .hover-text {
-    opacity: 0.8; /* Muestra el texto al hacer hover */
-    transform: translateY(0); /* Anima la entrada */
-    transition-delay: 0s; /* Sin delay al entrar */
+    opacity: 0.8;
+    transform: translateY(0);
+    transition-delay: 0s;
   }
 }
-
-/* Deshabilitar el hover-text en pantallas menores a 700px */
 @media (max-width: 699px) {
   .hover-text {
-    display: none; /* Oculta el texto en pantallas pequeñas */
+    display: none;
   }
 }
 
+/* FILTER MENU */
+.filter-menu {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  padding: 20px;
+  z-index: 120;
+}
+.filter-menu select {
+  padding: 5px;
+  font-size: 14px;
+}
+.filter-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: right;
+}
+.filter-item {
+  font-size: 1.2rem;
+  color: white;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  text-decoration: none;
+}
+.filter-item:hover {
+  opacity: 1;
+}
+.filter-item.active {
+  opacity: .3;
+}
+.filter-item[data-filter="all"] {
+  font-weight: bold;
+}
+.filter-item[data-filter="archive"] {
+  font-style: normal;
+  opacity: 0.6;
+}
+.filter-item.active[data-filter="archive"] {
+  font-style: italic;
+}
 
-/* GALERIA VIDEOS */
+/* GALLERY */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -141,17 +187,14 @@ cursor: help;}
   padding: 5px 1vw;
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
-  align-items: start; /* <-- Cambia stretch por start */
+  align-items: start;
 }
-
 .container.fade-out {
   opacity: 0;
 }
-
 .container.fade-in {
   opacity: 1;
 }
-
 .column {
   flex: 1;
   display: flex;
@@ -163,7 +206,6 @@ cursor: help;}
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  /* background: #131313; */
 }
 img {
   width: 100%;
@@ -181,13 +223,12 @@ img {
   opacity: 0;
   transition: 0.5s;
 }
-
 .post:hover .overlay {
   opacity: 0.95;
   cursor: pointer;
 }
 .gif {
-  width: 100%; /* Customize the size of the GIF */
+  width: 100%;
   height: auto;
   object-fit: contain;
   display: flex;
@@ -195,7 +236,7 @@ img {
   z-index: -3;
 }
 .overlay h3 {
-  font-size: 1.1rem; /* Ajusta el tamaño del título */
+  font-size: 1.1rem;
   text-align: center;
   text-transform: uppercase;
   opacity: 1;
@@ -203,21 +244,17 @@ img {
   color: white;
   z-index: 3;
 }
-
-/* Styling for the director line */
 .overlay .director {
-  font-size: 0.9rem; /* Adjust font size */
-  color: white; /* Text color */
-  opacity: 0; /* Slightly transparent */
-  margin-bottom: 5px; /* Space between director and subtitle */
-  text-align: center; /* Center-align text */
+  font-size: 0.9rem;
+  color: white;
+  opacity: 0;
+  margin-bottom: 5px;
+  text-align: center;
   position: absolute;
-  top: 50%; /* Adjust position */
-    transform: translateY(10px); /* Fine-tune vertical alignment */
+  top: 50%;
+  transform: translateY(10px);
   z-index: 3;
 }
-
-/* Cambiar referencias de .subtitle a .category */
 .overlay .category {
   font-size: 0.7rem;
   text-transform: uppercase;
@@ -228,7 +265,6 @@ img {
   top: 50%;
   z-index: 3;
 }
-
 .overlay .brand {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -238,7 +274,6 @@ img {
   position: absolute;
   z-index: 3;
 }
-
 .overlay .brand-year {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -246,20 +281,17 @@ img {
   opacity: 0.7;
   text-align: center;
   position: absolute;
-  top: 50%; /* Ajusta la posición según sea necesario */
-    transform: translateY(10px);
-
+  top: 50%;
+  transform: translateY(10px);
   z-index: 3;
 }
-
 .overlay p {
-  font-size: 1rem; /* Ajusta el tamaño del subtítulo */
+  font-size: 1rem;
   position: absolute;
   opacity: .7;
   color: white;
   z-index: 3;
 }
-
 .overlay-images {
   position: absolute;
   bottom: 30px;
@@ -277,11 +309,7 @@ img {
 }
 
 /* MODAL */
-
-
-/* Style for the modal */
 .modal {
-  
   position: fixed;
   z-index: 1;
   left: 0;
@@ -290,32 +318,26 @@ img {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.9);
-  display: flex; /* Use flexbox to center vertically */
-  align-items: center; /* Center vertically */
-	z-index: 40;
+  display: flex;
+  align-items: center;
+  z-index: 40;
 }
-
 .modal-content {
-position: relative;
-	  width: 100%;
+  position: relative;
+  width: 100%;
   height: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    align-items: stretch;
-    flex-direction: column;
-    padding-top: 10vh;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  padding-top: 10vh;
 }
-
 .close {
- 
- 
- 
-  
   cursor: pointer;
-	text-align: center;
-	 margin: 0 auto;
+  text-align: center;
+  margin: 0 auto;
   position: fixed;
   top: 50px;
   right: 3.5vw;
@@ -324,17 +346,15 @@ position: relative;
   transition: color 0.3s ease;
   opacity: .7;
 }
-
 .modal h2 {
   font-size: 1.5rem;
   margin: 0;
-	opacity: .9;
+  opacity: .9;
 }
-
 .modal p {
   font-size: 1rem;
   margin: 0;
-	opacity: .7;
+  opacity: .7;
 }
 .project-title {
   position: fixed;
@@ -350,23 +370,20 @@ position: relative;
   display: flex;
   flex-direction: column;
 }
-
 .project-technical-data {
   position: fixed;
   bottom: 30px;
   right: 3.5vw;
   display: flex;
-   flex-direction: column;
-	text-align: right;
+  flex-direction: column;
+  text-align: right;
 }
-
-
 .vimeo-player{
-	 position: relative;
-    padding-top: 70%; /* 16:9 --> 56,25 // 4:3 --> 75% */
-    height: 0;
-    overflow: hidden;
-	  display: block;
+  position: relative;
+  padding-top: 70%;
+  height: 0;
+  overflow: hidden;
+  display: block;
   flex-grow: 3;
   flex-shrink: 1;
   flex-basis: auto;
@@ -374,182 +391,116 @@ position: relative;
   order: 0;
 }
 .vimeo-player iframe{
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
 }
 
-/* FOOTER  */
+/* FOOTER */
 .footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  text-align: right; /* Align text to the right */
+  text-align: right;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Align content to the right */
-  align-items: flex-end; /* Align items to the right */
+  justify-content: flex-end;
+  align-items: flex-end;
   gap: 5px;
   opacity: 0.9;
   padding: 20px;
-  z-index: 10;
+  z-index: 120;
   background: linear-gradient(to top, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0));
-  pointer-events: none; /* Evita que el footer bloquee la interacción */
+  pointer-events: none;
 }
 .footer a {
-  text-decoration: none; /* Removes the default underline */
+  text-decoration: none;
   position: relative;
   color: white;
   opacity: 0.8;
-  font-size: 1.2rem; /* Adjust the font size as needed */
+  font-size: 1.2rem;
   transition: opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  margin: 0; /* Ensure no extra spacing */
-  padding: 0; /* Ensure no extra spacing */
-  line-height: 1; /* Reduce line height to minimize spacing */
-  pointer-events: auto; /* Permite la interacción solo con los enlaces */
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  pointer-events: auto;
 }
-
 .footer a:hover {
-  opacity: 1; /* Increases opacity on hover */
+  opacity: 1;
 }
 
-/* Estilo para la página del proyecto */
+/* PROJECT PAGE */
 .project-page {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra el contenido verticalmente */
-  align-items: center; /* Centra el contenido horizontalmente */
-  height: 100vh; /* Ocupa toda la altura de la ventana */
-  background-color: black; /* Fondo oscuro */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
   color: white;
   overflow: hidden;
 }
-
 .video-container {
-  width: 90vw; /* Ocupa todo el ancho de la ventana */
-  height: 80vh; /* Ocupa toda la altura de la ventana */
+  width: 90vw;
+  height: 80vh;
   background-color: black;
-  display: flex; /* Usa flexbox para centrar */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 100px;
-  padding: 0; /* Elimina cualquier padding */
+  padding: 0;
   z-index: 20;
 }
-
 .video-container iframe {
-  width: 100%; /* Ocupa todo el ancho del contenedor */
-  height: 100%; /* Ocupa toda la altura del contenedor */
+  width: 100%;
+  height: 100%;
   border: none;
-  object-fit: cover; /* Asegura que el video cubra el contenedor */
+  object-fit: cover;
 }
-
 .project-info {
-  position: absolute; /* Ancla la sección a la parte inferior */
-  bottom: 20px; /* Espaciado desde la parte inferior */
+  position: absolute;
+  bottom: 20px;
   left: 0;
-  width: 100%; /* Asegura que ocupe todo el ancho */
+  width: 100%;
   padding: 20px;
-  display: flex; /* Usa flexbox para organizar los elementos */
-  flex-direction: column; /* Coloca los elementos uno encima del otro */
-  align-items: center; /* Centra los elementos horizontalmente */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: white;
-  text-align: center; /* Centra el texto */
+  text-align: center;
 }
-
 .project-info h1 {
   font-size: 1.2rem;
   margin-bottom: 5px;
   opacity: 0.9;
-  text-align: left; /* Alinea el texto del título a la izquierda */
-  width: 100%; /* Asegura que ocupe todo el ancho */
+  text-align: left;
+  width: 100%;
 }
-
 .project-info p {
   font-size: 0.9rem;
   margin-bottom: 5px;
   opacity: 0.7;
-  text-align: left; /* Alinea el texto de las especificaciones a la izquierda */
-  width: 100%; /* Asegura que ocupe todo el ancho */
+  text-align: left;
+  width: 100%;
 }
-
 .project-info .back-link {
   position: fixed;
-  bottom: 20px; /* Espaciado desde la parte inferior */
+  bottom: 20px;
   font-size: 0.9rem;
   color: white;
   text-decoration: none;
   opacity: 0.8;
   transition: opacity 0.3s ease;
-  text-align: center; /* Centra el enlace */
+  text-align: center;
 }
-
 .project-info .back-link:hover {
   opacity: 1;
 }
 
-/* Filter Menu */
-.filter-menu {
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  padding: 20px;
-  z-index: 20;
-}
-
-.filter-menu select {
-  padding: 5px;
-  font-size: 14px;
-}
-
-.filter-list {
-  list-style: none;
-  padding: 0; /* Ensure no extra padding */
-  margin: 0; /* Ensure no extra margin */
-  display: flex;
-  flex-direction: column; /* Display items in a column */
-  gap: 5px; /* Reduce spacing between items */
-  text-align: right; /* Align text to the right */
-}
-
-.filter-item {
-  font-size: 1.2rem;
-  color: white;
-  opacity: 0.8; /* Default opacity for unselected items */
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-  text-align: right; /* Align text to the right */
-  margin: 0; /* Ensure no extra margin */
-  padding: 0; /* Ensure no extra padding */
-  line-height: 1; /* Minimize line spacing */
-  text-decoration: none; /* Remove underline */
-}
-
-.filter-item:hover {
-  opacity: 1; /* Increase opacity on hover */
-}
-
-.filter-item.active {
-  opacity: .3; /* Ensure full opacity for the active item */
-}
-
-.filter-item[data-filter="all"] {
-  font-weight: bold; /* Aplica negrita siempre */
-}
-
-.filter-item[data-filter="archive"] {
-  font-style: normal; /* Estilo normal por defecto */
-  opacity: 0.6; /* Opacidad normal por defecto */
-}
-
-.filter-item.active[data-filter="archive"] {
-  font-style: italic; /* Aplica cursiva solo cuando está seleccionado */
-}
-
-/* Fade-in Animation */
+/* FADE-IN ANIMATION */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -560,188 +511,153 @@ position: relative;
     transform: translateY(0);
   }
 }
-
 .project-fade-in {
   opacity: 0;
   animation: fadeInUp 0.7s ease forwards;
 }
 
-
-/* Archive Table */
+/* ARCHIVE TABLE */
 .archive-table {
-  background-color: transparent; /* Fondo transparente para la tabla */
-  border-spacing: 0; /* Opcional: elimina el espacio entre celdas */
-  margin-top: 50px; /* Ajusta este valor según sea necesario */
+  background-color: transparent;
+  border-spacing: 0;
+  margin-top: 50px;
   width: 95%;
   font-size: 1rem;
   border-collapse: separate;
-  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+  text-transform: uppercase;
   table-layout: auto;
   margin-left: 20px;
   margin-right: 20px;
   z-index: 2;
-  counter-reset: rowNumber; /* Initialize the counter */
+  counter-reset: rowNumber;
+    filter: blur(0.1px);
+
 }
 .archive-table th,
 .archive-table td {
-  margin: 0px 10px; /* Ajusta el espaciado interno de las celdas */
-  text-align: left; /* Alinea el texto a la izquierda */
-  word-wrap: break-word; /* Permite que el texto se ajuste si es muy largo */
-  overflow:scroll; /* Oculta el texto que no cabe */
-  text-overflow: ellipsis; /* Agrega puntos suspensivos al texto truncado */
-  flex: 0 0 auto; /* Evita que las celdas se redimensionen automáticamente */
+  margin: 0px 10px;
+  text-align: left;
+  word-wrap: break-word;
+  overflow:scroll;
+  text-overflow: ellipsis;
+  flex: 0 0 auto;
 }
-
 .archive-table tr {
-  opacity: 0; /* Comienza invisible */
-  transition: opacity 0.7s ease, transform 0.5s ease; /* Transición suave */
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.5s ease;
   cursor: pointer;
-  counter-increment: rowNumber; /* Incrementa el contador en cada fila */
+  counter-increment: rowNumber;
 }
-
 .archive-table tr.row-fade-in {
-  opacity: 1; /* Se vuelve visible */
-  transform: translateY(0); /* Vuelve a su posición original */
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 3s ease, transform 2s ease;
-
-
 }
-
 .archive-table tr:hover {
-  opacity: 1; /* Se vuelve completamente visible */
-  filter: blur(0.2px);
-  transform: translateY(0); /* Vuelve a su posición original */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
-
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
 .archive-table:hover tr:not(:hover) {
-  opacity: 0.5; /* Reduce la opacidad de las filas no seleccionadas */
-  filter: blur(0.5px);
-  transform: translateY(0); /* Mantén la posición */
-  transition: opacity 0.5s ease; transform: 0.5s ease; /* Transición suave */
+  opacity: 0.5;
+  transform: translateY(0);
+  transition: opacity 0.5s ease; transform: 0.5s ease;
 }
-
 .row-fade-in {
-  opacity: 1; /* Se vuelve visible */
-  transform: translateY(0); /* Vuelve a su posición original */
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 5s ease, transform 5s ease;
 }
-
 .archive-table tr td:first-child::before {
-  content: "0" counter(rowNumber); /* Agrega un 0 delante del número */
+  content: "0" counter(rowNumber);
   display: inline-block;
-  text-align: left; /* Alinea los números a la derecha */
-  margin-right: 10px; /* Espaciado entre el número y el contenido */
-  color: #ffffff; /* Cambia el color según el diseño */
+  text-align: left;
+  margin-right: 10px;
+  color: #ffffff;
 }
-
-/* Si los números tienen más de una cifra, elimina el 0 inicial */
 .archive-table tr:nth-child(n+10) td:first-child::before {
-  content: counter(rowNumber); /* Muestra solo el número sin el 0 inicial */
+  content: counter(rowNumber);
 }
-
-/* Adaptación para pantallas menores a 600px */
 @media (max-width: 600px) {
   .archive-table {
     display: flex;
-    flex-direction: column; /* Asegura que las filas se comporten como flex items */
+    flex-direction: column;
   }
-
   .archive-table tr {
     display: flex;
-    flex-direction: row; /* Asegura que las celdas se comporten como flex items */
+    flex-direction: row;
   }
-
   .archive-table td:nth-child(4) {
-    order: 1; /* Coloca la columna 4 primero */
+    order: 1;
   }
-
   .archive-table td:nth-child(2) {
-    order: 2; /* Coloca la columna 2 después */
+    order: 2;
   }
-
   .archive-table td:nth-child(5),
   .archive-table td:nth-child(3),
   .archive-table td:nth-child(1) {
-    display: none; /* Oculta las columnas de subtítulo, ubicación y año */
+    display: none;
   }
-
   .archive-table td {
-    display: table-cell; /* Asegura que las celdas visibles se muestren correctamente */
-    text-align: left; /* Ajusta la alineación si es necesario */
+    display: table-cell;
+    text-align: left;
     font-size: 1rem;
   }
 }
-
-/* Adaptación para pantallas entre 601px y 900px */
 @media (max-width: 900px) and (min-width: 601px) {
   .archive-table {
     display: flex;
-    flex-direction: column; /* Asegura que las filas se comporten como flex items */
+    flex-direction: column;
   }
-
   .archive-table tr {
     display: flex;
-    flex-direction: row; /* Asegura que las celdas se comporten como flex items */
+    flex-direction: row;
   }
-
   .archive-table td:nth-child(4) {
-    order: 1 !important; /* Coloca la columna 4 primero */
-
+    order: 1 !important;
   }
-
   .archive-table td:nth-child(2) {
-    order: 2 !important; /* Coloca la columna 2 después */
-        width: 240px; /* Ancho fijo para pantallas menores a 900px */
-
+    order: 2 !important;
+    width: 240px;
   }
-
   .archive-table td:nth-child(5) {
-    order: 3 !important; /* Coloca la columna 5 después */
+    order: 3 !important;
   }
-
   .archive-table td:nth-child(3),
   .archive-table td:nth-child(1) {
-    display: none !important; /* Oculta las columnas de subtítulo, ubicación y año */
+    display: none !important;
   }
-
   .archive-table td {
-    display: table-cell !important; /* Asegura que las celdas visibles se muestren correctamente */
-    text-align: left; /* Ajusta la alineación si es necesario */
+    display: table-cell !important;
+    text-align: left;
     font-size: 1rem;
   }
 }
-
-/* Media query for screens smaller than 600px */
 @media (max-width: 600px) {
   .overlay {
-    opacity: 0; /* Oculta el overlay por defecto */
-    visibility: hidden; /* Asegura que no sea visible */
-    transition: opacity 0.7s ease, visibility 0.7s ease,0.5s ease; /* Transición suave */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.7s ease, visibility 0.7s ease,0.5s ease;
   }
-/* Ensures the GIF in the overlay is displayed above other elements in smaller screens */
-.overlay .gif {
-  z-index: 2;
-}
+  .overlay .gif {
+    z-index: 2;
+  }
   .overlay h3,
   .overlay p {
-    display: block; /* Ensure text elements are displayed */
+    display: block;
     z-index: 3;
-    
   }
 }
 
-/* Lazy Image */
+/* LAZY IMAGE */
 .lazy-image {
   opacity: 0;
-  transform: scale(0.95); /* Escala inicial para el efecto */
+  transform: scale(0.95);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
 .lazy-image.fade-in {
   opacity: 1;
-  transform: scale(1); /* Escala final */
+  transform: scale(1);
 }
 
 

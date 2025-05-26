@@ -1,12 +1,13 @@
+// Project data for Carlos Carbonell
 const projects = [
   {
     id: 32,
     title: 'Le Snake',
     category: 'Campaign',
     brand: 'Asensi Studio',
-    image: 'files/le-snake.png',
+    image: 'files/le-snake.webp',
     alt: 'Le Snake - Campaign for Asensi Studio directed by Hector Sanchis & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/8a1b8d40-6373-4e93-81be-0eb8aa55a0ef.gif?ClientID=sulu&Date=1746876477&Signature=a2826afd93fc1d1420f12a7cc78ad53b59047b78',
+    gif: 'files/le-snake.webm',
     year: '2025',
     location: 'Valencia, Spain',
     format: 'Pyxis LF & AstroHori Probe 18mm',
@@ -20,9 +21,9 @@ const projects = [
     title: 'Le fleur',
     category: 'Campaign',
     brand: 'Asensi Studio',
-    image: 'files/le-fleur.png',
+    image: 'files/le-fleur.webp',
     alt: 'Le Fleur - Campaign for Asensi Studio directed by Hector Sanchis & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/34004f3a-f2b2-4121-bc28-e2faac1c6bda.gif?ClientID=sulu&Date=1746878213&Signature=2f28b93b01ed05750d2b4a9b6322ba8c1b190337',
+    gif: 'files/le-fleur.webm',
     year: '2025',
     location: 'Valencia, Spain',
     format: 'Bolex Rex 2 KV3 7207',
@@ -36,9 +37,9 @@ const projects = [
     title: 'El fútbol es solo fútbol',
     category: 'Campaign',
     brand: 'Levante UD',
-    image: 'files/el-futbol-es-solo-futbol.png',
+    image: 'files/el-futbol-es-solo-futbol.webp',
     alt: 'El fútbol es solo fútbol - Campaign for Levante UD directed by David García Yuste & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/fc47415f-fad4-4b75-bf31-cf5b1fdc8414.gif?ClientID=sulu&Date=1746882069&Signature=eb0695e92c1eb8f6e25c264ca381046361c1a7b2',
+    gif: 'files/el-futbol-es-solo-futbol.webm',
     year: '2025',
     location: 'Valencia, Spain',
     format: 'Pyxis LF & Leica R',
@@ -52,9 +53,9 @@ const projects = [
     title: 'Verte',
     category: 'Campaign',
     brand: 'Visit Valencia',
-    image: 'files/verte.png',
+    image: 'files/verte.webp',
     alt: 'Verte - Campaign for Visit Valencia directed by Júlia Castaño & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/27bc5a7d-b1eb-40a7-b538-c7fae64a2589.gif?ClientID=sulu&Date=1746875071&Signature=756e6ed55c9325c4d914214a83b1c9ff97be3e66',
+    gif: 'files/verte.webm',
     year: '2024',
     location: 'Valencia, Spain',
     format: 'Alexa Mini & Zeiss SUPER SPEED MKii',
@@ -68,9 +69,9 @@ const projects = [
     title: 'Maratón Valencia',
     category: 'Campaign',
     brand: '42K running',
-    image: 'files/maraton.png',
+    image: 'files/maraton.webp',
     alt: 'Maratón Valencia - Campaign for 42K running directed by Hector Sanchis & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/6d9b8cc0-1f7f-4ae0-a264-7e5d15ba7471.gif?ClientID=sulu&Date=1746876913&Signature=8b669c884f2ff737a08aa72d8fe15453cc2c441f',
+    gif: 'files/maraton.webm',
     year: '2024',
     location: 'Valencia, Spain',
     format: 'Pyxis LF & Blazar Remus',
@@ -84,9 +85,9 @@ const projects = [
     title: 'Rebobinar',
     category: 'Music video',
     brand: 'La Fúmiga',
-    image: 'files/rebobinar.png',
+    image: 'files/rebobinar.webp',
     alt: 'Rebobinar - Music video for La Fúmiga directed by Artur Martínez & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/36ba971c-034c-4991-9bba-a9fe44871dfe.gif?ClientID=sulu&Date=1746874545&Signature=ed490f7a2ec1de6171fa072ead81a93735943de8',
+    gif: 'files/rebobinar.webm',
     year: '2024',
     location: 'Costa blanca, Spain',
     format: 'Pyxis LF & Leica R',
@@ -100,9 +101,9 @@ const projects = [
     title: 'ORO',
     category: 'Music video',
     brand: 'Boira',
-    image: 'files/oro.png',
+    image: 'files/oro.webp',
     alt: 'ORO - Music video for Boira directed by David García Yuste & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/4f515308-f282-4b55-99ed-aa31fbeb37d3.gif?ClientID=sulu&Date=1746887087&Signature=caf94c2803135705fbffda31a5b62b5f8dd5f8ab',
+    gif: 'files/oro.webm',
     year: '2024',
     location: 'Valencia, Spain',
     format: 'Bolex Rex 3 KV3 7219',
@@ -116,9 +117,9 @@ const projects = [
     title: "L'espurna D'aielo",
     category: 'Short Film',
     brand: 'Documentary',
-    image: 'files/Aielo.png',
+    image: 'files/aielo.webp',
     alt: "L'espurna D'aielo - Documentary directed by Óscar Jimenez & shot by Carlos Carbonell",
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/63f91c66-8f4f-4dc4-a938-292561a847d5.gif?ClientID=sulu&Date=1747391499&Signature=020127468b766c889e60a5b9dc822e6fad94c5f8',
+    gif: 'files/aielo.webm',
     year: '2024',
     location: 'Aielo del Malferit, Valencia',
     format: 'BMPCC & Leica R',
@@ -127,11 +128,10 @@ const projects = [
     director: 'Óscar Jimenez',
     productionCompany: 'La Veu media',
     overlayImages: [
-      "files/espurna-laurel-1.png",
-      "files/espurna-laurel-2.png",
-      "files/espurna-laurel-3.png",
-      "files/espurna-laurel-4.png",
-      
+      'files/espurna-laurel-1.webp',
+      'files/espurna-laurel-2.webp',
+      'files/espurna-laurel-3.webp',
+      'files/espurna-laurel-4.webp',
     ]
   },
   {
@@ -139,9 +139,9 @@ const projects = [
     title: 'Nos volveremos a ver',
     category: 'Campaign',
     brand: 'La Raiz',
-    image: 'files/nos-volveremos-a-ver.png',
+    image: 'files/nos-volveremos-a-ver.webp',
     alt: 'Nos volveremos a ver - Campaign for La Raiz directed by Nyàs & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/9b1916bd-4897-44a7-b738-192fb75bd2ae.gif?ClientID=sulu&Date=1746875011&Signature=d0dcb9838d81c36ab83d30eac686e4a707b0f859',
+    gif: 'files/nos-volveremos-a-ver.webm',
     year: '2023',
     location: 'Valencia, Spain',
     format: 'Alexa Mini & Leica R',
@@ -155,11 +155,11 @@ const projects = [
     title: 'La mala reputación',
     category: 'Music video',
     brand: 'Ciudad Jara',
-    image: 'files/mala-reputacion.png',
+    image: 'files/mala-reputacion.webp',
     alt: 'La mala reputación - Music video for Ciudad Jara',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/12e831f0-dff0-40cd-b791-8a4645337996.gif?ClientID=vimeo-core-prod&Date=1707222287&Signature=85f749bd85d70de9d3c072af95f9e0df8c407a2f',
+    gif: 'files/mala-reputacion.webm',
     year: '2024',
-    location: 'València',
+    location: 'Valencia, Spain',
     format: 'ARRI ALEXA MINI & LEICA R',
     vimeoId: '884878570',
     url: 'mala-reputacion.html',
@@ -171,9 +171,9 @@ const projects = [
     title: 'Pa Casa',
     category: 'Music video',
     brand: 'Saiko x Ryan Castro',
-    image: 'files/pa-casa.png',
+    image: 'files/pa-casa.webp',
     alt: 'Pa Casa - Music video for Saiko x Ryan Castro directed by Jorge No & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/4944d8da-9877-48a1-9854-86c68d64e012.gif?ClientID=sulu&Date=1746884547&Signature=9c83d5f0f5e1504116e52d426d3bcf210a9b0f2c',
+    gif: 'files/pa-casa.webm',
     year: '2023',
     location: 'Mallorca, Balears',
     format: 'Alexa Mini & Zeiss SUPER SPEED MKii',
@@ -182,15 +182,14 @@ const projects = [
     director: 'Jorge No',
     productionCompany: 'Take a Nap',
   },
-
   {
     id: 21,
     title: 'Dimonis',
     category: 'Short Film',
     brand: 'concept film',
-    image: 'files/dimonis.png',
+    image: 'files/dimonis.webp',
     alt: 'Dimonis - Short Film concept directed by Carlos Carbonell & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/c33307ca-1520-402f-94c6-00aa48fdca86.gif?ClientID=vimeo-core-prod&Date=1684595155&Signature=db4e1e33920ea4d1680592ccecc4b38bf4e53ac0',
+    gif: 'files/dimonis.webm',
     year: '2023',
     location: 'Campanar, Valencia',
     format: '8MM',
@@ -204,9 +203,9 @@ const projects = [
     title: 'Llençols',
     category: 'Short Film',
     brand: 'concept film',
-    image: 'files/llencols.png',
+    image: 'files/llencols.webp',
     alt: 'Llençols - Short Film concept directed by Júlia Castaño & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/c5adc747-e308-48f2-80ba-4886af98c134.gif?ClientID=vimeo-core-prod&Date=1690711137&Signature=83e2dd2f3b50d390dd62f922d828c5329e35cd64',
+    gif: 'files/llencols.webm',
     year: '2023',
     location: 'Valencia, Spain',
     format: '8mm, digital, tape',
@@ -220,9 +219,9 @@ const projects = [
     title: 'El primer ball',
     category: 'Music video',
     brand: 'El Diluvi ft. Els Catarres',
-    image: 'files/el-primer-ball.png',
+    image: 'files/el-primer-ball.webp',
     alt: 'El primer ball - Music video for El Diluvi ft. Els Catarres directed by Júlia Castaño & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/0ff30497-071a-427a-8b4a-a4c58d25c3bd.gif?ClientID=vimeo-core-prod&Date=1690711112&Signature=054669cc6caa621e2ada1a960034ef6d3a028831',
+    gif: 'files/el-primer-ball.webm',
     year: '2023',
     location: 'Valencia, Spain',
     format: 'Zcam & Leica R',
@@ -236,9 +235,9 @@ const projects = [
     title: 'Tu fiel Jodida Mitad',
     category: 'Music video',
     brand: 'Sienna',
-    image: 'files/sienna-tfjm.png',
+    image: 'files/tu-fiel-jodida-mitad.webp',
     alt: 'Tu fiel Jodida Mitad - Music video for Sienna directed by Charlie Gradolí & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/8df4e389-57ee-47e2-a5ad-b7a8a24e8e1f.gif?ClientID=vimeo-core-prod&Date=1690711094&Signature=b25e596fdb42746f3e107bc0dffb4561d183250b',
+    gif: 'files/tu-fiel-jodida-mitad.webm',
     year: '2023',
     location: 'Valencia, Spain',
     format: 'BMPCC & Angenieux HR',
@@ -252,9 +251,9 @@ const projects = [
     title: 'Office Rats',
     category: 'Campaign',
     brand: 'Issues',
-    image: 'files/office-rats.png',
+    image: 'files/office-rats.webp',
     alt: 'Office Rats - Campaign for Issues directed by Charlie Gradolí & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/3ee9cbd5-c0c1-42e6-8ee1-2bcb7edaf6e8.gif?ClientID=vimeo-core-prod&Date=1675804654&Signature=154493d40ed63d5dc200def6897da7881b0d80b2',
+    gif: 'files/office-rats.webm',
     year: '2023',
     location: 'Valencia, Spain',
     format: 'BMPCC & Leica R',
@@ -268,9 +267,9 @@ const projects = [
     title: 'No es diumenge',
     category: 'Music video',
     brand: 'Pupil·les',
-    image: 'files/no-es-diumenge.png',
+    image: 'files/no-es-diumenge.webp',
     alt: 'No es diumenge - Music video for Pupil·les directed by Júlia Castaño & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/651ca93b-6171-4c83-88a1-9145073eb986.gif?ClientID=vimeo-core-prod&Date=1682011966&Signature=5d72a4c06aea1a215949fe874748424c250c36b2',
+    gif: 'files/no-es-diumenge.webm',
     year: '2023',
     location: 'Valencia, Spain',
     format: 'BMPCC & Super Takumar',
@@ -284,9 +283,9 @@ const projects = [
     title: 'Hijos de la Voluntad',
     category: 'Short Film',
     brand: 'Short film ',
-    image: 'files/hijos-de-la-voluntad.png',
+    image: 'files/hijos-de-la-voluntad.webp',
     alt: 'Hijos de la Voluntad - Short Film directed by Antonio Galicia & shot by David García Yuste',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/ae02830e-8c75-4c4d-89da-030df4d2aa77.gif?ClientID=sulu&Date=1746872757&Signature=97f84210e89b9e7f95670c3ef7163f4d374a6a6f',
+    gif: 'files/hijos-de-la-voluntad.webm',
     year: '2023',
     location: 'Valencia, Spain',
     format: 'K3 16mm Orwo film',
@@ -295,9 +294,9 @@ const projects = [
     director: 'Antonio Galicia',
     productionCompany: 'David García Yuste',
     overlayImages: [
-      "files/HDLV-laurel-1.png",
-      "files/HDLV-laurel-2.png",
-      "files/HDLV-laurel-3.png"
+      'files/hdlv-laurel-1.webp',
+      'files/hdlv-laurel-2.webp',
+      'files/hdlv-laurel-3.webp'
     ]
   },
   {
@@ -305,9 +304,9 @@ const projects = [
     title: 'Rally',
     category: 'Music video',
     brand: 'Treze',
-    image: 'files/treze_rally.png',
+    image: 'files/rally.webp',
     alt: 'Rally - Music video for Treze directed by Charlie Gradolí & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/350fa300-d9f4-4b77-b0ad-5848896de144.gif?ClientID=vimeo-core-prod&Date=1682009789&Signature=48f5cebccdf71dd6720d4c8f36a4a736f46de21c',
+    gif: 'files/rally.webm',
     year: '2023',
     location: 'Valencia, Spain',
     format: 'mini DV tape / BMPCC & Leica R',
@@ -321,9 +320,9 @@ const projects = [
     title: 'Clasicos FS23',
     category: 'Campaign',
     brand: 'Clasicos del barrio',
-    image: 'files/clasicos.png',
+    image: 'files/clasicos.webp',
     alt: 'Clasicos FS23 - Campaign for Clasicos del barrio directed by David García Yuste & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/515f1b4a-2a91-412c-84e7-bd149df81464.gif?ClientID=vimeo-core-prod&Date=1690711071&Signature=786bf2efd0f22c55bb536c5cac36794437134ddd',
+    gif: 'files/clasicos.webm',
     year: '2023',
     location: 'Valencia, Spain',
     format: 'BMPCC & Leica R',
@@ -337,9 +336,9 @@ const projects = [
     title: 'A fer la mà',
     category: 'Music video',
     brand: 'El diluvi',
-    image: 'files/a-fer-la-ma.png',
+    image: 'files/a-fer-la-ma.webp',
     alt: 'A fer la mà - Music video for El diluvi directed by Charlie Gradolí & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/bac7a000-ae41-4b96-8944-64b5553bb7a8.gif?ClientID=vimeo-core-prod&Date=1675801521&Signature=6283fd39b9651f1917ef3284eef465e44ce6a55d',
+    gif: 'files/a-fer-la-ma.webm',
     year: '2023',
     location: 'Valencia, Spain',
     format: 'BMPCC & Leica R',
@@ -353,9 +352,9 @@ const projects = [
     title: 'Cantantes',
     category: 'Music video',
     brand: 'Ciudad Jara',
-    image: 'files/cantantes.png',
+    image: 'files/cantantes.webp',
     alt: 'Cantantes - Music video for Ciudad Jara directed by Pablo Sanchez & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/da97c989-8df3-4611-8030-1a780370e19a.gif?ClientID=sulu&Date=1746889811&Signature=78e91749d2cb35be19e9d77e9cca6ca8479c296d',
+    gif: 'files/cantantes.webm',
     year: '2022',
     location: 'Valencia, Spain',
     format: 'Zcam & Leica R',
@@ -369,9 +368,9 @@ const projects = [
     title: 'Caliu',
     category: 'Short Film',
     brand: 'concept film',
-    image: 'files/Caliu.png',
+    image: 'files/caliu.webp',
     alt: 'Caliu - Short Film concept directed by David García Yuste & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/542f0d26-1bf1-4303-916e-20fbe4d8ac5a.gif?ClientID=vimeo-core-prod&Date=1656499598&Signature=f68c52cfb35419e65a9c6325b3f1c5640aed8b73',
+    gif: 'files/caliu.webm',
     year: '2022',
     location: 'Mallorca, Balears',
     format: '8mm / BMPCC & Tokina RMC',
@@ -385,9 +384,9 @@ const projects = [
     title: 'Si tu me pidieras',
     category: 'Music video',
     brand: 'Ciudad Jara',
-    image: 'files/si-tu-me-pidieras.png',
+    image: 'files/si-tu-me-pidieras.webp',
     alt: 'Si tu me pidieras - Music video for Ciudad Jara directed by Pablo Sanchez & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/fc451472-7bc5-45c1-8cce-a514744d7dac.gif?ClientID=vimeo-core-prod&Date=1656499628&Signature=94d9d95c4a7acd0db0fa29d081fa88642b55b1eb',
+    gif: 'files/si-tu-me-pidieras.webm',
     year: '2022',
     location: 'Valencia, Spain',
     format: 'Zcam & Leica R',
@@ -401,9 +400,9 @@ const projects = [
     title: 'Algo más fuerte',
     category: 'Music video',
     brand: 'Sienna',
-    image: 'files/algo_mas_fuerte.png',
+    image: 'files/algo-mas-fuerte.webp',
     alt: 'Algo más fuerte - Music video for Sienna directed by Alex Sienna & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/82a7e6a1-34ed-4157-8f78-e0f9e1c0a67d.gif?ClientID=sulu&Date=1747477762&Signature=bfb07070e0e840cfee2d331df78d33d86fa4fa68',
+    gif: 'files/algo-mas-fuerte.webm',
     year: '2021',
     location: 'Valencia, Spain',
     format: 'TAPE / BMPCC & Tokina RMC',
@@ -417,9 +416,9 @@ const projects = [
     title: 'Adiós',
     category: 'Music video',
     brand: 'Ciudad Jara',
-    image: 'files/Adios.png',
+    image: 'files/adios.webp',
     alt: 'Adiós - Music video for Ciudad Jara directed by David García Yuste & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/cfc20282-0516-498f-83d0-d3ac9e340cfc.gif?ClientID=vimeo-core-prod&Date=1656499662&Signature=7942fc8ad6ba72a6a959d031dacb5959667a968f',
+    gif: 'files/adios.webm',
     year: '2022',
     location: 'Lisboa, Portugal',
     format: 'BMCC 4K & Contax Zeiss',
@@ -433,9 +432,9 @@ const projects = [
     title: 'Como has podido',
     category: 'Music video',
     brand: 'Sienna',
-    image: 'files/como_has_podido.png',
+    image: 'files/como-has-podido.webp',
     alt: 'Como has podido - Music video for Sienna directed by Alex Sienna & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/4890f960-dca1-459a-9de5-4515e714c683.gif?ClientID=sulu&Date=1746872167&Signature=467c5983a060efff05bfc308cb3ef4fe1f70399a',
+    gif: 'files/como-has-podido.webm',
     year: '2021',
     location: 'Valencia, Spain',
     format: 'BMPCC & Contax Zeiss',
@@ -449,9 +448,9 @@ const projects = [
     title: 'El Estreno',
     category: 'Short Film',
     brand: 'Short film ',
-    image: 'files/el_estreno.png',
+    image: 'files/el-estreno.webp',
     alt: 'El Estreno - Short Film directed by Júlia Castaño & Antonio Galicia & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/36aa50b3-8996-4c97-9df2-64bf3c9a814a.gif?ClientID=sulu&Date=1746885882&Signature=3f201053a3bdda7d8973b7489730dcb48502cbf4',
+    gif: 'files/el-estreno.webm',
     year: '2021',
     location: 'Valencia & Gandia',
     format: 'BMPCC & Tokina RMC',
@@ -460,7 +459,7 @@ const projects = [
     director: 'Júlia Castaño & Antonio Galicia',
     productionCompany: 'El Ático',
     overlayImages: [
-      "files/el-estreno_laurel.png"
+      'files/el-estreno_laurel.webp'
     ]
   },
   {
@@ -468,9 +467,9 @@ const projects = [
     title: 'Quiero que aparezcas aquí',
     category: 'Music video',
     brand: 'Sienna',
-    image: 'files/quiero_que_aparezcas_aqui.png',
+    image: 'files/quiero-que-aparezcas-aqui.webp',
     alt: 'Quiero que aparezcas aquí - Music video for Sienna directed by Alex Sienna & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/cf8d7bbf-167f-4fad-a7a1-55ffccabd5e0.gif?ClientID=vimeo-core-prod&Date=1668249680&Signature=405b780488501247e1cf575dd5dddf962f5e12c1',
+    gif: 'files/quiero-que-aparezcas-aqui.webm',
     year: '2021',
     location: 'Valencia, Spain',
     format: 'BMPCC & Tokina RMC',
@@ -484,9 +483,9 @@ const projects = [
     title: 'Season S21',
     category: 'Campaign',
     brand: 'BLGR',
-    image: 'files/blgr.png',
+    image: 'files/blgr.webp',
     alt: 'Season S21 - Campaign for BLGR directed by Manel Dart & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/9d379c2b-846d-4c98-b58c-c55753e37e40.gif?ClientID=sulu&Date=1746888715&Signature=994a3b4f209c1d6e6ff0b415a0c7db5a05863bed',
+    gif: 'files/blgr.webm',
     year: '2021',
     location: 'Valencia, Spain',
     format: 'BMPCC & Tokina RMC',
@@ -500,9 +499,9 @@ const projects = [
     title: 'Esto me va a matar',
     category: 'Music video',
     brand: 'Sienna',
-    image: 'files/esto_me_va_a_matar.png',
+    image: 'files/esto-me-va-a-matar.webp',
     alt: 'Esto me va a matar - Music video for Sienna directed by Alex Sienna & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/76b6e0cc-5893-4923-b1ff-fe4a51b0a31b.gif?ClientID=vimeo-core-prod&Date=1656499565&Signature=2087b38232c8512f79279e0db4601826cab0d646',
+    gif: 'files/esto-me-va-a-matar.webm',
     year: '2021',
     location: 'Valencia, Spain',
     format: 'Bolex rex4 KV3 7219',
@@ -516,9 +515,9 @@ const projects = [
     title: 'Bad Year',
     category: 'Short Film',
     brand: 'Concept Film',
-    image: 'files/bad_year.png',
+    image: 'files/bad-year.webp',
     alt: 'Bad Year - Short Film concept directed by David García Yuste & shot by Carlos Carbonell',
-    gif: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/1a6879b2-c7a3-4e86-9566-fdce063c98b2.gif?ClientID=sulu&Date=1709544893&Signature=f67627ddd28b85e9f596ecb16d3333c03fd23ac8',
+    gif: 'files/bad-year.webm',
     year: '2021',
     location: 'Alboraya & Valencia',
     format: 'BMPCC & Tokina RMC',
@@ -530,42 +529,35 @@ const projects = [
 
 export default projects;
 
-// Get the `id` parameter from the URL
-const urlParams = new URLSearchParams(window.location.search);
-const projectId = parseInt(urlParams.get('id'), 10);
+// PROJECT SLUG EXTRACTION
+const pathMatch = window.location.pathname.match(/^\/project\/([a-zA-Z0-9\-_]+)/);
+const projectSlug = pathMatch ? pathMatch[1] : null;
 
-// Validate projectId to ensure it's a valid number
-if (isNaN(projectId)) {
-  console.error('Invalid or missing project ID');
+// PROJECT LOOKUP
+let project;
+if (projectSlug) {
+  project = projects.find(p => p.url.replace('.html', '') === projectSlug);
 } else {
-
-  // Buscar el proyecto correspondiente
-  const project = projects.find((p) => p.id === projectId);
-
-  if (project != null) {
-    // Establecer el título del proyecto
-    document.getElementById('project-title').textContent = project.title;
-
-    // Establecer los detalles del proyecto
-    document.getElementById('project-details').textContent = `${project.year} | ${project.format} | ${project.location}`;
-
-    // Establecer la fuente del reproductor de Vimeo
-    document.getElementById('vimeo-player').src = `https://player.vimeo.com/video/${project.vimeoId}`;
-
-    // Set dynamic meta description
-    const description = `${project.title} - Directed by ${project.director}${project.productionCompany && project.productionCompany !== 'undefined' ? `, produced by ${project.productionCompany}` : ''}, a ${project.category.toLowerCase()} shot in ${project.location} (${project.year}), shot on ${project.format}, by Carlos Carbonell.`;
-    document.getElementById('dynamic-description').setAttribute('content', description);
-
-    // Set dynamic meta keywords
-    const keywords = `${project.title}, ${project.brand}, ${project.category}, ${project.location}, Carlos Carbonell, cinematographer`;
-    document.getElementById('dynamic-keywords').setAttribute('content', keywords);
-
-    // Set dynamic OG meta tags
-    document.getElementById('og-title').setAttribute('content', project.title);
-    document.getElementById('og-description').setAttribute('content', description);
-    document.getElementById('og-image').setAttribute('content', project.image || '/default-thumbnail.jpg'); // Use project.image for OG image
-    document.getElementById('og-url').setAttribute('content', window.location.href);
-  } else {
-    console.error('Project not found');
+  const urlParams = new URLSearchParams(window.location.search);
+  const projectId = parseInt(urlParams.get('id'), 10);
+  if (!isNaN(projectId)) {
+    project = projects.find((p) => p.id === projectId);
   }
+}
+
+// PROJECT DATA INJECTION
+if (project) {
+  document.getElementById('project-title').textContent = project.title;
+  document.getElementById('project-details').textContent = `${project.year} | ${project.format} | ${project.location}`;
+  document.getElementById('vimeo-player').src = `https://player.vimeo.com/video/${project.vimeoId}`;
+  const description = `${project.title} - Directed by ${project.director}${project.productionCompany && project.productionCompany !== 'undefined' ? `, produced by ${project.productionCompany}` : ''}, a ${project.category.toLowerCase()} shot in ${project.location} (${project.year}), shot on ${project.format}, by Carlos Carbonell.`;
+  document.getElementById('dynamic-description').setAttribute('content', description);
+  const keywords = `${project.title}, ${project.brand}, ${project.category}, ${project.location}, Carlos Carbonell, cinematographer`;
+  document.getElementById('dynamic-keywords').setAttribute('content', keywords);
+  document.getElementById('og-title').setAttribute('content', project.title);
+  document.getElementById('og-description').setAttribute('content', description);
+  document.getElementById('og-image').setAttribute('content', project.image || '/default-thumbnail.jpg');
+  document.getElementById('og-url').setAttribute('content', window.location.href);
+} else {
+  console.error('Project not found');
 }
